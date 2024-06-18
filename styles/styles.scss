@@ -254,8 +254,40 @@ header{
     }
 }
 
+.mapContainer{
+    background-color: #FFFFFF;
+    margin-bottom: 0;
+    .objectLocated{
+        color: #35465E;
+        font-size: 26px;
+        font-weight: bolder;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .objectAdress{
+        font-size: 18px;
+        color: #35465E;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
 
-
+footer{
+    background-color: #3053B5;
+    padding: 50px 0;
+    div{
+        display: flex;
+        gap: 30px;
+        width: fit-content;
+        margin: 0 auto;
+        .phoneNumber{
+            color: #FFF;
+            font-size: 24px;
+        }
+    }
+}
 
 
 
@@ -446,7 +478,17 @@ header{
                 width: 80vw;
             }
         }
-    }       
+    }   
+    .mapContainer{
+        .objectLocated{
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .objectAdress{
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+    }    
 }
 
 @media (max-width: 700px) {

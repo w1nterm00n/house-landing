@@ -2,6 +2,7 @@ import HeroSection from './components/HeroSection'
 import PhotosSection from './components/PhotosSection'
 import Footer from './components/Footer'
 import '../styles/styles.css'
+import MapSection from './components/MapSection'
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <>
       <HeroSection/>
       <PhotosSection/>
-      <Footer phoneNumber={9999999}/>
+      <MapSection/>
+      <Footer phoneNumber={"+7 (996) 147 68 00"}/>
     </>
   )
 }
