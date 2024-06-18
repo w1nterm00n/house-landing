@@ -11,6 +11,14 @@ body {
     background-color: rgb(42, 42, 42);
     margin: 0;
 }
+span{
+    display: block;
+}
+.leftArrow{
+    transform: scaleX(-1);
+}
+
+
 
 header{
     padding: 80px 150px 0 150px;
@@ -35,7 +43,8 @@ header{
 .HeroSection{
     background: url(../src/assets/housebackground.jpg) no-repeat center;
     background-size: cover;
-    height: 100vh;
+    padding-bottom: 100px;
+    margin-bottom: 0;
     .mainInfo {
         padding: 0 150px;
         h1{
@@ -108,7 +117,220 @@ header{
     }
 }
 
+.PhotosSection{
+    padding: 50px 150px 0 150px;
+    background-color: #FFFFFF;
+    h3{
+        font-weight: bolder;
+        font-size: 36px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+    .container-b{
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       width: fit-content;
+       margin: 0 auto;
+       .container-m{
+        display: flex;
+        gap: 15px;
+        .child{
+            img{
+                max-height: 615px;
+            }
+        }
+        .container-s{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .child{
+                img{
+                    max-height: 300px;
+                }
+            }
+        }
+       }
+       .container-m-bottom {
+        position: relative;  // устанавливаем относительное позиционирование
+            .carouselOfText {
+                position: absolute;  // carouselOfText будет позиционироваться относительно ближайшего элемента с позиционированием, отличным от static, в данном случае это container-m-bottom
+                bottom: 0;  // прижимаем к нижнему краю
+                left: 0;  // прижимаем к левому краю
+            }
+        }
+    }
+
+    .morePhotos{
+        display: block;
+        color: #35465E;
+        font-size: 18px;
+        width: fit-content;
+        margin: 0 auto;
+        background: none;
+        border: 0;
+        padding: 50px 0;
+    }
+
+    .textSlide{
+        background-color: #FFF;
+        width: 30vw;
+        padding: 30px;
+        border-radius: 5px 5px 5px 0;
+        box-shadow: -10px 10px 5px 0px rgba(116, 116, 116, 0.1);
+        .slideHeading{
+            font-size: 24px;
+            font-weight: bolder;
+            margin-bottom: 30px;
+            color: #35465E;
+        }
+        .slideDescription{
+            font-size: 16px;
+            color: #35465E;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .sliderButtons{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #35465E;
+            font-size: 16px;
+            font-weight: bolder;
+
+            button{
+                background: none;
+                border: 0;
+            }
+            
+        }
+    }
+    //каруселька more Photos
+    .photosSlider{
+        position: fixed;
+        top: 50%;      
+        left: 50%;     
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        margin: 0 auto;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        max-height: 700px;
+        z-index: 10; 
+
+        button{
+            height: fit-content;
+            background: none;
+            border: 0;
+            background-color: #a8a8a8;
+            border-radius: 5px;
+            max-width: 80px;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+        img{
+            max-height: 800px;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+    }
+    .overlay {
+        position: fixed;
+        width: 100%;    /* Покрывает полную ширину экрана */
+        height: 100%;   /* Покрывает полную высоту экрана */
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.7);  /* Полупрозрачный черный цвет */
+        z-index: 9;  /* Ниже чем .photosSlider, но выше остального контента */
+        .closeBtn{
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            background: none;
+            border: none;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1700px) {
+    .PhotosSection{
+        .container-b{
+            .container-m{
+            .child{
+                img{
+                    max-height: 515px; //615
+                }
+            }
+            .container-s{
+                .child{
+                    img{
+                        max-height: 250px; //300
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .PhotosSection{
+        .container-b{
+            .container-m{
+            .child{
+                img{
+                    max-height: 415px;
+                }
+            }
+            .container-s{
+                .child{
+                    img{
+                        max-height: 200px;
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
 @media (max-width: 1200px) {
+    .PhotosSection{
+        padding: 50px 80px 0 80px;
+        .container-b{
+            .container-m{
+            .child{
+                img{
+                    max-height: 315px; //415
+                }
+            }
+            .container-s{
+                .child{
+                    img{
+                        max-height: 150px; //200
+                    }
+                }
+            }
+            }
+        }
+        .photosSlider{
+            img{
+                max-height: 700px;
+            }
+        }
+    }
+
     header{
         padding: 80px 80px 0 80px;
         margin-bottom: 60px;
@@ -137,7 +359,67 @@ header{
     }       
 }
 
+@media (max-width: 900px) {
+    .PhotosSection{
+        .container-b{
+            .container-m{
+            .child{
+                img{
+                    max-height: 280px; //415
+                }
+            }
+            .container-s{
+                .child{
+                    img{
+                        max-height: 130px; //200
+                    }
+                }
+            }
+            }
+        }
+        .photosSlider{
+            img{
+                max-height: 600px;
+            }
+        }
+    }
+}
+
 @media (max-width: 800px) {
+    .PhotosSection{
+        .container-b{
+            .container-m{
+            .child{
+                img{
+                    max-height: 300px; //280
+                }
+            }
+            .container-s{
+                display: none;
+            }
+            }
+        }
+        .textSlide{
+            // width: 45vw;
+            width: 90%;
+            box-sizing: border-box;
+            .slideHeading{
+                margin-bottom: 30px;
+            }
+            .slideDescription{
+                margin-bottom: 30px;
+            }
+        }
+        .photosSlider{
+            img{
+                max-height: 550px;
+            }
+            button{
+                max-width: 80px;
+                padding: 10px;
+            }
+        }
+    }
     header{
         padding: 80px 80px 0 80px;
         margin-bottom: 30px;
@@ -168,6 +450,17 @@ header{
 }
 
 @media (max-width: 700px) {
+    .photosSlider{
+        img{
+            max-height: 480px !important;
+            margin-right: 20px !important;
+            margin-left: 20px !important;
+        }
+        button{
+            max-width: 60px !important;
+            padding: 0px;
+        }
+    }
     header{
         padding: 80px 30px 0 30px;
     }    
@@ -184,6 +477,33 @@ header{
 }
 
 @media (max-width: 600px) {
+    .PhotosSection{
+        padding: 50px 30px 0 30px;
+        .container-b{
+            .container-m{
+            .child{
+                img{
+                    max-height: 250px;
+                }
+            }
+            }
+        }
+        .textSlide{
+            width: 90%;
+            box-sizing: border-box;
+        }
+        .photosSlider{
+            img{
+                max-height: 430px !important;
+                margin-right: 8px !important;
+                margin-left: 8px !important;
+            }
+            button{
+                max-width: 45px !important;
+                padding: 8px;
+            }
+        }
+    }
     header{
         padding: 20px 30px 0 30px;
     }    
