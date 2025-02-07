@@ -1,7 +1,9 @@
 import photo1_s from '../photos/housephoto1_s.jpg'
-import photo2_s from '../photos/housephoto2_s.jpg'
-import photo3_s from '../photos/housephoto3_s.jpg'
+// import photo2_s from '../photos/housephoto2_s.jpg'
+// import photo3_s from '../photos/housephoto3_s.jpg'
 import photo4_s from '../photos/housephoto4_s.jpg'
+import photo3_s from '../photos/housephoto8_s.jpg'
+import photo2_s from '../photos/housephoto9_s.jpg'
 
 import photo1_m from '../photos/housephoto1_m.jpg'
 import photo2_m from '../photos/housephoto2_m.jpg'
@@ -17,8 +19,7 @@ function PhotosSection() {
   const [showCarousel, setShowCarousel] = useState(false);
 
 
-  let showHui = function () {
-    
+  let showPics = function () {
     setShowCarousel(!showCarousel);
   };
 
@@ -50,13 +51,13 @@ function PhotosSection() {
           </div>
         </div>
     
-      <button className='morePhotos' onClick={showHui}>Больше фото</button>
+      <button className='morePhotos' onClick={showPics}>Больше фото</button>
 
 
       {showCarousel && 
           <>
             <div className="overlay">
-                <button className='closeBtn' onClick={showHui}><img src={x} alt="x" /></button>
+                <button className='closeBtn' onClick={showPics}><img src={x} alt="x" /></button>
             </div>
             <CarouselOfPhotos />
           </>

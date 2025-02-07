@@ -10,6 +10,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: rgb(42, 42, 42);
     margin: 0;
+    background-color: #FFFFFF;
+    font-size: 18px;
 }
 span{
     display: block;
@@ -22,7 +24,7 @@ span{
 
 header{
     padding: 80px 150px 0 150px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     div{
         display: flex;
         align-items: center;
@@ -37,21 +39,39 @@ header{
                 height: 44px;
             }
         }
+        .phoneNumber{
+            display: flex;
+            flex-direction: column;
+            .copyPhoneNumber{
+                display: flex;
+                button{
+                    background: none;
+                    border: 0;
+                }
+            }
+        }
     }
 }
 
 .HeroSection{
-    background: url(../src/assets/housebackground.jpg) no-repeat center;
+    background: url(../src/photos/background.webp) no-repeat center;
     background-size: cover;
     padding-bottom: 100px;
     margin-bottom: 0;
     .mainInfo {
         padding: 0 150px;
+        h2{
+            font-size: 100px;
+            color: #FFF;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
         h1{
+            margin-top: 0;
             color: #FFF;
             font-weight: bolder;
             font-size: 56px;
-            margin-bottom: 50px;
+            margin-bottom: 55px;
             max-width: 50vw;
             line-height: 1.3;
         }
@@ -69,7 +89,7 @@ header{
                     font-weight: bold;
                 }
                 .detail{
-                    font-size: 16px;
+                    font-size: 18px;
                 }
             }
         }
@@ -91,7 +111,7 @@ header{
             gap: 50px;
             flex-wrap: wrap;
             margin-bottom: 30px;
-            .mapBtn{
+            .blueBtn{
                 display: flex;
                 background-color: #2489FF;
                 border: none;
@@ -106,12 +126,6 @@ header{
                     padding: 10px;
                     border-radius: 100%;
                 }
-            }
-            .moreAboutObject{
-                background: none;
-                border: none;
-                color: #FFF;
-                font-size: 16px;
             }
         }
     }
@@ -157,6 +171,9 @@ header{
                 position: absolute;  // carouselOfText будет позиционироваться относительно ближайшего элемента с позиционированием, отличным от static, в данном случае это container-m-bottom
                 bottom: 0;  // прижимаем к нижнему краю
                 left: 0;  // прижимаем к левому краю
+                .slideDescription{
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -220,17 +237,18 @@ header{
         z-index: 10; 
 
         button{
-            height: fit-content;
             background: none;
             border: 0;
-            background-color: #a8a8a8;
             border-radius: 5px;
-            max-width: 80px;
             display: flex;
             justify-content: center;
-            padding: 15px;
+            padding: 5px;
+            img{
+                width: 60px;
+                height: 60px;
+            }
         }
-        img{
+        .sliderPhoto{
             max-height: 800px;
             margin-right: 40px;
             margin-left: 40px;
@@ -272,6 +290,65 @@ header{
         margin-left: 20px;
         margin-right: 20px;
     }
+    div{    
+        position: relative;
+        .lightening{
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, transparent 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 7;
+        }
+    }
+}
+
+.infoSection{
+    padding: 0 150px;
+    .housePhoto{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    .textInfo{
+        position: relative;
+        h5{
+            font-size: 36px;
+            color: #35465E;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        p{
+            display: block;
+            max-width: 70%;
+            font-size: 18px;
+            color: #35465E;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        .lightening{
+            width: 70%;
+            height: 40%;
+            background: linear-gradient(to top, white 0%, transparent 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    button.readMore{
+        background-color: #2489FF;
+        font-size: 16px;
+        color: #EBEBEB;
+        border: 0;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 100px;
+    }
 }
 
 footer{
@@ -285,6 +362,16 @@ footer{
         .phoneNumber{
             color: #FFF;
             font-size: 24px;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            .copyPhoneNumber{
+                display: flex;
+                button{
+                    background: none;
+                    border: 0;
+                }
+            }
         }
     }
 }
@@ -365,7 +452,6 @@ footer{
 
     header{
         padding: 80px 80px 0 80px;
-        margin-bottom: 60px;
         div{
             gap: 10px;
             a{
@@ -379,6 +465,9 @@ footer{
     .HeroSection{
         .mainInfo {
             padding: 0 80px;
+            h2{
+                font-size: 70px;
+            }
             h1{
                 font-size: 44px;
             }
@@ -417,6 +506,16 @@ footer{
     }
 }
 
+@media (max-width: 850px) {
+    .PhotosSection{
+        .photosSlider{
+            img{
+                max-height: 650px !important;
+            }
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .PhotosSection{
         .container-b{
@@ -444,7 +543,7 @@ footer{
         }
         .photosSlider{
             img{
-                max-height: 550px;
+                max-height: 550px !important;
             }
             button{
                 max-width: 80px;
@@ -487,6 +586,23 @@ footer{
         .objectAdress{
             font-size: 16px;
             margin-bottom: 50px;
+        }
+    }
+    .infoSection{
+        padding: 0 80px;
+        .textInfo{
+            h5{
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+            p{
+                max-width: 90%;
+                margin-bottom: 40px;
+            }
+            .lightening{
+                width: 90%;
+                height: 40%;
+            }
         }
     }    
 }
@@ -545,6 +661,12 @@ footer{
                 padding: 8px;
             }
         }
+        .overlay {
+            .closeBtn{
+                top: 10px;
+                right: 10px;
+            }
+        }
     }
     header{
         padding: 20px 30px 0 30px;
@@ -564,6 +686,9 @@ footer{
                 max-width: 90vw;
                 margin-bottom: 20px;
             }
+            h2{
+                font-size: 50px;
+            }
             .propertyDetails{
                 margin-bottom: 30px;
                 .characteristic{
@@ -576,6 +701,70 @@ footer{
                 width: fit-content;
                 margin: 0 auto;
                 gap: 20px;
+            }
+        }
+    }
+    .infoSection{
+        padding: 0 30px;
+        .textInfo{
+            h5{
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            p{
+                max-width: 90%;
+                margin-bottom: 40px;
+            }
+            .lightening{
+                width: 90%;
+                height: 40%;
+            }
+        }
+    }  
+}
+
+@media (max-width: 450px) {
+    .PhotosSection{
+        .photosSlider{
+            img{
+                max-height: 420px !important;
+                margin-right: 1px !important;
+                margin-left: 1px !important;
+            }
+            button{
+                img{
+                    width: 30px;
+                    height: 30px;
+                    margin: 0 !important;
+                }
+            }
+        }
+        .overlay {
+            .closeBtn{
+                top: 10px;
+                right: 0px;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .PhotosSection{
+        .photosSlider{
+            img{
+                max-height: 365px !important;
+                margin-right: 0px !important;
+                margin-left: 0px !important;
+            }
+            button{
+                img{
+                    width: 25px;
+                    height: 25px;
+                }
             }
         }
     }

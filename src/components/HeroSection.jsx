@@ -1,47 +1,71 @@
 import map from '../assets/map-pin.png'
+import arrow from '../assets/arrow.svg'
 import Header from './Header'
+import { propertyDetails, propertyHighlights } from '../assets/propertyData';
 import PropertyDetail from './PropertyDetail'
 import PropertyHighlight from './PropertyHighlights'
+import { useState, useEffect } from "react";
 
 function HeroSection() {
 
+    //вычисление цены 1 кв м
+    const [totalPrice, setTotalPrice] = useState("10 999 000");
+    const [meterPrice, setMeterPrice] = useState("10 999 000");
+
+    let calcMeterPrice = function (totalPrice) {
+        const numberStr = totalPrice.replace(/\s+/g, '');
+        const price = Number(numberStr);
+        const priceForMeter = Math.floor(price / 170);
+        setMeterPrice(priceForMeter);
+    };
+
+    useEffect(() => {
+        calcMeterPrice(totalPrice);
+    }, []);
+    //вычисление цены 1 кв м
+
     return (
       <div className='HeroSection'>
-        <Header phoneNumber="+7 (996) 147 68 00"/>
-
+        <Header/>
         <div className='mainInfo'>
-            <h1>Дом 170 м2 в Кетово на участке 20 соток</h1>
+            <h2>ПРОДАЁТСЯ</h2>
+            <h1>Дом 170 м&#178; в Кетово на участке 20 соток</h1>
 
-            <div className='propertyDetails'>
-                <PropertyDetail detail="Цена объекта" value="13 300 000 ₽"/>
-                <PropertyDetail detail="Цена 1 кв. м." value="78 235 ₽"/>
-                <PropertyDetail detail="Площадь дома" value="170 м2"/>
-                <PropertyDetail detail="Площадь участка" value="20 соток"/>
+
+            <div className="propertyDetails">
+                {propertyDetails.map((item, index) => (
+                    <PropertyDetail
+                    key={index}
+                    detail={item.detail}
+                    value={item.value}
+                    style={item.style} // Если стиль задан, он применится
+                    />
+                ))}
             </div>
-            
-            <div className='propertyHighlights'>
-                <PropertyHighlight highlight="Участок на берегу озера Щучье"/>
-                <PropertyHighlight highlight="Высота 1 этажа: 3.6 метра"/>
-                <PropertyHighlight highlight="Два выхода, один из них на озеро"/>
-                <PropertyHighlight highlight="Год постройки: 2015"/>
-                <PropertyHighlight highlight="Площадь второго дома: 66 м2"/>
-                <PropertyHighlight highlight="Материал стен: газоблоки"/>
-                <PropertyHighlight highlight="Паводок 2024 года дом не задел"/>
-                <PropertyHighlight highlight="На участке находятся два дома, продаются по цене одного."/>
+
+
+            <div className="propertyHighlights">
+                {propertyHighlights.map((item, index) => (
+                    <PropertyHighlight
+                    key={index}
+                    highlight={item.highlight}
+                    />
+                ))}
             </div>
 
             <div className='ActionPanel'>
-                <button className='mapBtn'>
+                <button className='blueBtn'>
                     <div>
                         <img src={map} alt="map pin" />
                     </div>
-                    <a href="#!">Посмотреть на карте</a>
+                    <a href="#map">Посмотреть на карте</a>
                 </button>
 
-                <button className='moreAboutObject'>
-                    <a href="#!">
-                        🡣 Подробнее об объекте
-                    </a>
+                <button className='blueBtn'>
+                    <div>
+                        <img src={arrow} alt="arrow pin" />
+                    </div>
+                    <a href="#description">Подробнее об объекте</a>
                 </button>
             </div>
     

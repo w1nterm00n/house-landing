@@ -12,6 +12,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: rgb(42, 42, 42);
   margin: 0;
+  background-color: #FFFFFF;
+  font-size: 18px;
 }
 
 span {
@@ -24,7 +26,7 @@ span {
 
 header {
   padding: 80px 150px 0 150px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 header div {
   display: flex;
@@ -39,9 +41,20 @@ header div a img {
   width: 44px;
   height: 44px;
 }
+header div .phoneNumber {
+  display: flex;
+  flex-direction: column;
+}
+header div .phoneNumber .copyPhoneNumber {
+  display: flex;
+}
+header div .phoneNumber .copyPhoneNumber button {
+  background: none;
+  border: 0;
+}
 
 .HeroSection {
-  background: url(../src/assets/housebackground.jpg) no-repeat center;
+  background: url(../src/photos/background.webp) no-repeat center;
   background-size: cover;
   padding-bottom: 100px;
   margin-bottom: 0;
@@ -49,11 +62,18 @@ header div a img {
 .HeroSection .mainInfo {
   padding: 0 150px;
 }
+.HeroSection .mainInfo h2 {
+  font-size: 100px;
+  color: #FFF;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 .HeroSection .mainInfo h1 {
+  margin-top: 0;
   color: #FFF;
   font-weight: bolder;
   font-size: 56px;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   max-width: 50vw;
   line-height: 1.3;
 }
@@ -73,7 +93,7 @@ header div a img {
   font-weight: bold;
 }
 .HeroSection .mainInfo .propertyDetails .characteristic .detail {
-  font-size: 16px;
+  font-size: 18px;
 }
 .HeroSection .mainInfo .propertyHighlights {
   display: grid;
@@ -95,7 +115,7 @@ header div a img {
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
-.HeroSection .mainInfo .ActionPanel .mapBtn {
+.HeroSection .mainInfo .ActionPanel .blueBtn {
   display: flex;
   background-color: #2489FF;
   border: none;
@@ -106,16 +126,10 @@ header div a img {
   color: #FFF;
   font-size: 16px;
 }
-.HeroSection .mainInfo .ActionPanel .mapBtn div {
+.HeroSection .mainInfo .ActionPanel .blueBtn div {
   background-color: #FFF;
   padding: 10px;
   border-radius: 100%;
-}
-.HeroSection .mainInfo .ActionPanel .moreAboutObject {
-  background: none;
-  border: none;
-  color: #FFF;
-  font-size: 16px;
 }
 
 .PhotosSection {
@@ -158,6 +172,9 @@ header div a img {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.PhotosSection .container-b .container-m-bottom .carouselOfText .slideDescription {
+  font-size: 18px;
 }
 .PhotosSection .morePhotos {
   display: block;
@@ -216,18 +233,18 @@ header div a img {
   z-index: 10;
 }
 .PhotosSection .photosSlider button {
-  height: -moz-fit-content;
-  height: fit-content;
   background: none;
   border: 0;
-  background-color: #a8a8a8;
   border-radius: 5px;
-  max-width: 80px;
   display: flex;
   justify-content: center;
-  padding: 15px;
+  padding: 5px;
 }
-.PhotosSection .photosSlider img {
+.PhotosSection .photosSlider button img {
+  width: 60px;
+  height: 60px;
+}
+.PhotosSection .photosSlider .sliderPhoto {
   max-height: 800px;
   margin-right: 40px;
   margin-left: 40px;
@@ -268,6 +285,65 @@ header div a img {
   margin-left: 20px;
   margin-right: 20px;
 }
+.mapContainer div {
+  position: relative;
+}
+.mapContainer div .lightening {
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, transparent 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+}
+
+.infoSection {
+  padding: 0 150px;
+}
+.infoSection .housePhoto {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.infoSection .textInfo {
+  position: relative;
+}
+.infoSection .textInfo h5 {
+  font-size: 36px;
+  color: #35465E;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.infoSection .textInfo p {
+  display: block;
+  max-width: 70%;
+  font-size: 18px;
+  color: #35465E;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.infoSection .textInfo .lightening {
+  width: 70%;
+  height: 40%;
+  background: linear-gradient(to top, white 0%, transparent 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.infoSection button.readMore {
+  background-color: #2489FF;
+  font-size: 16px;
+  color: #EBEBEB;
+  border: 0;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 100px;
+}
 
 footer {
   background-color: #3053B5;
@@ -283,6 +359,16 @@ footer div {
 footer div .phoneNumber {
   color: #FFF;
   font-size: 24px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+footer div .phoneNumber .copyPhoneNumber {
+  display: flex;
+}
+footer div .phoneNumber .copyPhoneNumber button {
+  background: none;
+  border: 0;
 }
 
 @media (max-width: 1700px) {
@@ -316,7 +402,6 @@ footer div .phoneNumber {
   }
   header {
     padding: 80px 80px 0 80px;
-    margin-bottom: 60px;
   }
   header div {
     gap: 10px;
@@ -327,6 +412,9 @@ footer div .phoneNumber {
   }
   .HeroSection .mainInfo {
     padding: 0 80px;
+  }
+  .HeroSection .mainInfo h2 {
+    font-size: 70px;
   }
   .HeroSection .mainInfo h1 {
     font-size: 44px;
@@ -348,6 +436,11 @@ footer div .phoneNumber {
     max-height: 600px;
   }
 }
+@media (max-width: 850px) {
+  .PhotosSection .photosSlider img {
+    max-height: 650px !important;
+  }
+}
 @media (max-width: 800px) {
   .PhotosSection .container-b .container-m .child img {
     max-height: 300px;
@@ -366,7 +459,7 @@ footer div .phoneNumber {
     margin-bottom: 30px;
   }
   .PhotosSection .photosSlider img {
-    max-height: 550px;
+    max-height: 550px !important;
   }
   .PhotosSection .photosSlider button {
     max-width: 80px;
@@ -404,6 +497,21 @@ footer div .phoneNumber {
   .mapContainer .objectAdress {
     font-size: 16px;
     margin-bottom: 50px;
+  }
+  .infoSection {
+    padding: 0 80px;
+  }
+  .infoSection .textInfo h5 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .infoSection .textInfo p {
+    max-width: 90%;
+    margin-bottom: 40px;
+  }
+  .infoSection .textInfo .lightening {
+    width: 90%;
+    height: 40%;
   }
 }
 @media (max-width: 700px) {
@@ -448,6 +556,10 @@ footer div .phoneNumber {
     max-width: 45px !important;
     padding: 8px;
   }
+  .PhotosSection .overlay .closeBtn {
+    top: 10px;
+    right: 10px;
+  }
   header {
     padding: 20px 30px 0 30px;
   }
@@ -468,6 +580,9 @@ footer div .phoneNumber {
     max-width: 90vw;
     margin-bottom: 20px;
   }
+  .HeroSection .mainInfo h2 {
+    font-size: 50px;
+  }
   .HeroSection .mainInfo .propertyDetails {
     margin-bottom: 30px;
   }
@@ -480,5 +595,51 @@ footer div .phoneNumber {
     width: fit-content;
     margin: 0 auto;
     gap: 20px;
+  }
+  .infoSection {
+    padding: 0 30px;
+  }
+  .infoSection .textInfo h5 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .infoSection .textInfo p {
+    max-width: 90%;
+    margin-bottom: 40px;
+  }
+  .infoSection .textInfo .lightening {
+    width: 90%;
+    height: 40%;
+  }
+}
+@media (max-width: 450px) {
+  .PhotosSection .photosSlider img {
+    max-height: 420px !important;
+    margin-right: 1px !important;
+    margin-left: 1px !important;
+  }
+  .PhotosSection .photosSlider button img {
+    width: 30px;
+    height: 30px;
+    margin: 0 !important;
+  }
+  .PhotosSection .overlay .closeBtn {
+    top: 10px;
+    right: 0px;
+  }
+  .PhotosSection .overlay .closeBtn img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 400px) {
+  .PhotosSection .photosSlider img {
+    max-height: 365px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+  .PhotosSection .photosSlider button img {
+    width: 25px;
+    height: 25px;
   }
 }/*# sourceMappingURL=styles.css.map */

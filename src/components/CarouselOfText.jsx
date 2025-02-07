@@ -1,15 +1,9 @@
 import arrowSlider from '../assets/arrow-slider.svg'
 import TextSlide from './CarouselOfTextSlide'
 import { useState, useEffect } from 'react';
+import { carouselTextArr } from '../assets/propertyData';
 
 function CarouselOfText() {
-
-    let carouselTextArr = [
-        {header: "Header 1", text: "text 1 blah blah"},
-        {header: "Header 2", text: "text 2 blah blah"},
-        {header: "Header 3", text: "text 3 blah blah"},
-        {header: "Header 4", text: "text 4 blah blah"},
-    ]
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -23,12 +17,6 @@ function CarouselOfText() {
       );
     };
     
-    //автоматически переключается на след слайд каждые 5 сек
-    useEffect(() => {
-        const interval = setInterval(handleNext, 5000);
-        return () => clearInterval(interval);
-    }, []);
-
     
     return (
       <div className='carouselOfText textSlide'>

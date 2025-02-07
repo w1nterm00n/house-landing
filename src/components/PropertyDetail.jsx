@@ -1,9 +1,9 @@
 
-function PropertyDetail({detail, value}) {
+function PropertyDetail({detail, value, style}) {
 
   return (
     <div className="characteristic">
-        <span className="value">{value}</span>
+        <span className="value" style={style}>{value}</span>
         <span className="detail">{detail}</span>
     </div>
   )
